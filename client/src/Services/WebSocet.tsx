@@ -18,7 +18,6 @@ export const getData: any = (action: string) => {
                     dispatch(connectingSuccess())
                     // console.log(`Соеденение успешно установлено`)
                 }
-
                 info.onmessage = (event) => {
                     let mainData = JSON.parse(event.data)
                     dispatch(getDataSuccess(mainData))
