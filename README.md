@@ -7,5 +7,5 @@
 * Прошу обратную связи и коментарии о тестовом задании!
 
 * Мои данные:
-* tel:rusflipz
-* mail:rusflipz@yandex.ru
+tel: rusflipz
+mail: rusflipz@yandex.ru
