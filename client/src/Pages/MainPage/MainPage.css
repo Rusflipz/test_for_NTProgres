@@ -1,9 +1,9 @@
-.App {
+.MainPage {
   text-align: center;
   /* background-color: #3251a1; */
 }
 
-.App-header {
+.MainPage-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;

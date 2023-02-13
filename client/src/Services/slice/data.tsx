@@ -7,7 +7,8 @@ interface CounterState {
     connectionSuccess: boolean;
     dataSuccess: boolean;
     data: Array<any> | null;
-    data1: any
+    data1: any;
+    listOfOrders: Array<any>;
 }
 
 //хранилище значений
@@ -32,18 +33,9 @@ export const initialState: CounterState = {
             "USD/RUB": 72.59,
             "TRY/RUB": 3.67,
             "BYN/RUB": 26.21,
-        }, listOfOrders: [{
-            id: 1,
-            CreationTime: "1-01-2011 02:03:04.567",
-            ChangeTime: "1-01-2011 02:03:04.567",
-            Status: "Active",
-            Side: "BUY",
-            Price: 10.50,
-            Amount: 10000,
-            Instrument: "CHY/RUB"
-        }]
-
+        },
     },
+    listOfOrders: []
 }
 
 //Методы, котрые можно вызывать через dispatch, для изменения состояния хранилища
@@ -68,6 +60,13 @@ export const dataSlice = createSlice({
             state.connectionLoading = false
             state.connectionSuccess = true
         },
+        //Записывает данные в хранилище
+        getList: (state, { payload }) => {
+            state.data = payload
+            state.dataSuccess = true
+            state.connectionLoading = false
+            state.connectionSuccess = true
+        },
         //Выводит ошибку
         ConnectingFail: (state) => {
             state.connectionLoading = false
@@ -75,13 +74,17 @@ export const dataSlice = createSlice({
             state.dataSuccess = false
             state.connectionError = true
         },
+        //Добавить запись
+        addToList: (state, { payload }) => {
+            state.listOfOrders = payload
+        },
 
     }
 })
 
 
 export const {
-    connecting, connectingSuccess, getDataSuccess, ConnectingFail,
+    connecting, connectingSuccess, getDataSuccess, ConnectingFail, addToList
 } = dataSlice.actions
 
 export const dataSelector = (state: { data: any; }) => state.data

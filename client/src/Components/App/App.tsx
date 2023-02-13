@@ -3,14 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { dataSelector } from '../../Services/slice/data';
 import { getData } from '../../Services/WebSocet';
 import Loading from '../Loading/Loading';
-import Ticker from '../Ticker/Ticker';
-import Error from '../Error/Erorr';
 import './App.css';
+import MainPage from '../../Pages/MainPage/MainPage';
 
 function App() {
 
   const dispatch = useDispatch();
-  const { data1, connectionLoading, connectionError, connectionSuccess, dataSuccess } = useSelector(dataSelector);
+  const { connectionLoading } = useSelector(dataSelector);
 
   useEffect(() => {
     dispatch(getData('connect'))
@@ -21,7 +20,7 @@ function App() {
 
   return (
     <div className="App">
-      {connectionLoading ? <Loading /> : <Ticker />}
+      {connectionLoading ? <Loading /> : <MainPage />}
     </div>
   );
 }
