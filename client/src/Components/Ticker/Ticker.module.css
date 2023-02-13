@@ -1,0 +1,52 @@
+.Ticker {
+  margin-top: 50px;
+  margin-left: calc(50% - 200px);
+  width: 400px;
+  height: 200px;
+  padding: 20px;
+  background-color: rgba(66, 76, 102, 0.1);
+  border: 2px solid black;
+  border-radius: 20px;
+  /* background-image: url(../../../../media/ticker.svg); */
+}
+
+.Ticker_header {
+  display: flex;
+  flex-direction: column;
+}
+
+.Ticker_header_option {
+  margin-bottom: 10px;
+}
+
+.Ticker_header_input {
+  margin-bottom: 10px;
+}
+
+.Ticker_bottom {
+  display: flex;
+  flex-direction: row;
+}
+
+.Ticker_bottom_box {
+  width: 50%;
+}
+
+.Ticker_bottom_price {
+  text-align: center;
+}
+
+.Ticker_bottom_button {
+  display: flex;
+  text-align: center;
+  align-self: center;
+  width: 60px;
+  margin: 0;
+  padding: 0;
+  margin: 0 auto;
+
+}
+
+.Ticker_bottom_button_text{
+  width: 100%;
+}
